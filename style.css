@@ -1,0 +1,189 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto" ,sans-serif;
+}
+
+html
+{
+    font-size: 62.5%;
+}
+
+section{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: #010b0d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+section::before
+{
+    content: "";
+    position: absolute;
+    height: 24rem;
+    width: 24rem;
+    border-radius: 50%;
+    transform: translate(-15rem, -10rem);
+    background: linear-gradient(90deg , #7950f2, #f8f0fc);
+}
+
+section::after
+{
+    content: "";
+    position: absolute;
+    height: 24rem;
+    width: 24rem;
+    border-radius: 50%;
+    transform: translate(15rem, 10rem);
+    background: linear-gradient(90deg , #7950f2, #f8f0fc);
+}
+
+.container
+{
+    height: 27.5rem;
+    width: 40.5rem;
+    position: relative;
+    z-index: 100;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+.container:hover
+{
+    transform: rotateY(180deg);
+}
+
+
+
+.container .card
+{
+    position: absolute;
+    height: 100%;
+    width:100% ;
+    padding: 2.4rem;
+    border-radius: 25px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 25px 45px rgba(255, 255, 255, 0.25)  ;
+    background: rgba(255, 255, 255, 0.1);
+    backface-visibility: hidden;
+}
+
+
+/* Mastercard logo */
+.front-face .logo img
+{
+    width: 4.8rem ;
+    margin-right: 1rem;
+}
+
+h5{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+h6{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+
+/* Chip logo */
+.front-face .chip
+{
+    width: 4.8rem;
+}
+
+.front-face header,
+.front-face .logo
+{
+    display: flex;
+    align-items: center;
+}
+
+.front-face header
+{
+    justify-content: space-between;
+}
+
+.front-face .card-details
+{
+    display: flex;
+    margin-top: 4.8rem;
+    align-items: flex-end; 
+    /* flex-end puts the content lowest position in the box */
+    justify-content: space-between;
+}
+
+h5.number
+{
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+}
+h5.name
+{
+    margin-top: 1.8rem;
+}
+
+.card.back-face
+{
+    border: none;
+    padding: 1.8rem 2.4rem 2.4rem 2.4rem;
+    transform: rotateY(180deg);
+}
+
+.card.back-face h6
+{
+    font-size: 0.8rem;
+}
+
+.card.back-face .magnetic-strip
+{
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    height: 4.8rem;
+    width: 100%;
+    background-color: #000;
+}
+
+.card.back-face .signature
+{
+    margin-top: 8rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 4rem;
+    width: 85%;
+    border-radius: 6px;
+    background-color: #fff;
+    background: repeating-linear-gradient(
+        #fff,
+        #fff 3px,
+        #efefef 0px,
+        #efefef 9px
+    );
+}
+
+.signature i{
+    color: #000;
+    font-size: 1.2rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.4rem;
+    margin-right: -3rem;
+    background-color: #fff;
+
+}
+
+.card.back-face h5
+{
+    font-size: 0.8rem;
+    margin-top: 1.8rem;
+}
